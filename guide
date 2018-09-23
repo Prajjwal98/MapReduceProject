@@ -1,0 +1,12 @@
+
+export JAVA_HOME=/usr/java/default  //run if java_home not set. echo $JAVA_HOME
+
+export PATH=${JAVA_HOME}/bin:${PATH}
+
+export HADOOP_CLASSPATH=${JAVA_HOME}/lib/tools.jar
+
+hadoop com.sun.tools.javac.Main Login.java FrameMain.java mr1.java all_products.java con_products.java mr2.java mr3.java  state_income.java definition.java state_income_avg.java mr4.java worker_insurance.java mr5.java worker_insurance_avg.java mr6.java worker_income.java mr7.java worker_income_avg.java mr8.java  -d bin
+
+jar cvf prj.jar -C bin/ .
+
+hadoop jar prj.jar hadoop.Login
